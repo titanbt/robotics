@@ -4,7 +4,7 @@
 
 ros::NodeHandle  nh;
 
-//Ecoder 
+//Ecoder
 int rawsensorValue_M1 = 0; // variable to store the value coming from the sensor
 int sensorcount0_M1 = 0;
 int sensorcount1_M1 = 0;
@@ -41,18 +41,25 @@ bool f = false;
 std_msgs::String str_msg;
 
 void messageCb( const std_msgs::String& toggle_msg){
-  //Serial.printf(toggle_msg.data); 
+  //Serial.printf(toggle_msg.data);
   str_msg.data = toggle_msg.data;
   if(strcmp(toggle_msg.data,"a") == 0){
       //digitalWrite(13, HIGH);
-      left(leftspeed,rightspeed);     
+      left(leftspeed,rightspeed);
       //Serial.println(toggle_msg.data);
   }
-  if(strcmp(toggle_msg.data,"d") == 0) {
+  else if(strcmp(toggle_msg.data,"d") == 0) {
+      right(leftspeed,rightspeed);
+  }
+  else if(strcmp(toggle_msg.data,"w") == 0) {
+      forward (leftspeed,rightspeed);
+  }
+  else if(strcmp(toggle_msg.data,"stop") == 0) {
       stop();
   }
-  //left(leftspeed,rightspeed);
-      // blink the led
+  else if(strcmp(toggle_msg.data,"s") == 0) {
+      reverse(leftspeed,rightspeed);
+  }
 }
 
 ros::Subscriber<std_msgs::String> sub("chatter", &messageCb );
@@ -261,4 +268,3 @@ Serial.print(count_M4);
 
 Serial.println(" ");
 }
-
