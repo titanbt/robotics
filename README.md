@@ -40,16 +40,17 @@ $ rosrun robot_setup_tf tf_listener
 ```
 ## Setup and Running with XBee
 
-##### Requirements
-  - XBee Explorer: For connect XBee with computer (Sending data).
-  - XBee Shield: For connect XBee with Arduino (Receiving data).
-  - Xbee (ZigBee): Sending and Receiving Signal.
-  - XCTU Software: Testing XBee working on computer.
+##### 1. Requirements
+  - **XBee Explorer:** For connect XBee with computer (Sending data).
+  - **XBee Shield:** For connect XBee with Arduino (Receiving data).
+  - **Xbee (ZigBee):** Sending and Receiving Signal.
+  - **XCTU Software:** Testing XBee working on computer.
 
-##### Setup ROS library for Serial Port (For writing data to XBee Explorer via port tyyUSB* - Baud 9600)
+##### 2. Setup ROS library for Serial Port (For writing data to XBee Explorer via port tyyUSB* - Baud 9600)
 
   **https://github.com/wjwwood/serial**
 
 ###### Note:
   1. Should Git Clone **Serial** folder into **catkin_ws/src** folder.
-  2. Change directory in **Makefile** following ROS directory: **CMAKE_FLAGS := -DCMAKE_INSTALL_PREFIX=/opt/ros/indigo** (Here ROS is installed in **opt** folder).
+  2. Change directory in **Makefile** following ROS directory: 
+  **CMAKE_FLAGS := -DCMAKE_INSTALL_PREFIX=/opt/ros/indigo** (Here ROS is installed in **opt** folder).
