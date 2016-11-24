@@ -7,6 +7,7 @@ project(robot_setup_tf)
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   roscpp
+  serial
   tf
 )
 
