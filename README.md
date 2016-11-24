@@ -51,5 +51,5 @@ $ rosrun robot_setup_tf tf_listener
   **https://github.com/wjwwood/serial**
 
 ###### Note:
-  1. Should git Clone **Serial** folder into **catkin_ws** folder.
-  2. Change directory following ROS directory: **CMAKE_FLAGS := -DCMAKE_INSTALL_PREFIX=/opt/ros/indigo** (ROS is installed at /opt).
+  1. Should Git Clone **Serial** folder into **catkin_ws/src** folder.
+  2. Change directory in **Makefile** following ROS directory: **CMAKE_FLAGS := -DCMAKE_INSTALL_PREFIX=/opt/ros/indigo** (Here ROS is installed in **opt** folder).
