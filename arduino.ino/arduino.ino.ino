@@ -4,7 +4,7 @@
 
 ros::NodeHandle  nh;
 
-//Ecoder
+//Ecoder 
 int rawsensorValue_M1 = 0; // variable to store the value coming from the sensor
 int sensorcount0_M1 = 0;
 int sensorcount1_M1 = 0;
@@ -40,12 +40,12 @@ int rightspeed = 255;
 bool f = false;
 std_msgs::String str_msg;
 
-void messageCb( const std_msgs::String& toggle_msg){
-  //Serial.printf(toggle_msg.data);
+/*void messageCb( const std_msgs::String& toggle_msg){
+  //Serial.printf(toggle_msg.data); 
   str_msg.data = toggle_msg.data;
   if(strcmp(toggle_msg.data,"a") == 0){
       //digitalWrite(13, HIGH);
-      left(leftspeed,rightspeed);
+      left(leftspeed,rightspeed);     
       //Serial.println(toggle_msg.data);
   }
   else if(strcmp(toggle_msg.data,"d") == 0) {
@@ -55,14 +55,14 @@ void messageCb( const std_msgs::String& toggle_msg){
       forward (leftspeed,rightspeed);
   }
   else if(strcmp(toggle_msg.data,"stop") == 0) {
-      stop();
+      stop();  
   }
   else if(strcmp(toggle_msg.data,"s") == 0) {
-      reverse(leftspeed,rightspeed);
+      reverse(leftspeed,rightspeed); 
   }
 }
 
-ros::Subscriber<std_msgs::String> sub("chatter", &messageCb );
+ros::Subscriber<std_msgs::String> sub("chatter", &messageCb );*/
 
 
 void setup()
@@ -70,17 +70,17 @@ void setup()
 int i;
 for(i=3;i<=13;i++)
 pinMode(i, OUTPUT);
-Serial.begin(576000);
+Serial.begin(9600);
 
-nh.initNode();
-nh.subscribe(sub);
+//nh.initNode();
+//nh.subscribe(sub);
 }
 void loop()
 {
-  nh.spinOnce();
-  delay(0);
-/*while (Serial.available() < 1) {
-encoder();
+  //nh.spinOnce();
+  //delay(0);
+while (Serial.available() < 1) {
+//encoder();
 } // Wait until a character is received
 char val = Serial.read();
 int leftspeed = 255; //255 is maximum speed
@@ -116,7 +116,7 @@ default:
 stop();
 break;
 }
-*/
+
 }
 void stop(void) //Stop
 {

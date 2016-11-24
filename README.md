@@ -8,12 +8,15 @@
 $ cd %TOP_DIR_YOUR_CATKIN_WS%/src
 $ catkin_create_pkg robot_setup_tf roscpp tf geometry_msgs
 ```
+In which:
+  - robot_setup_tf: the name of project.
+  - roscpp tf geometry_msgs: the name of library included into the project.
 
 ##### 2. Setup ROS for Arduino
 
   **http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup**
 
-## Running
+## Running without XBee
 
 ##### 1. Run Roscore
 
@@ -35,3 +38,18 @@ $ rosrun openni_tracker openni_tracker
 ```
 $ rosrun robot_setup_tf tf_listener
 ```
+## Setup and Running with XBee
+
+##### Requirements
+  - XBee Explorer: For connect XBee with computer (Sending data).
+  - XBee Shield: For connect XBee with Arduino (Receiving data).
+  - Xbee (ZigBee): Sending and Receiving Signal.
+  - XCTU Software: Testing XBee working on computer.
+
+##### Setup ROS library for Serial Port (For writing data to XBee Explorer via port tyyUSB* - Baud 9600)
+
+  **https://github.com/wjwwood/serial**
+
+###### Note:
+  1. Should git Clone **Serial** folder into **catkin_ws** folder.
+  2. Change directory following ROS directory: **CMAKE_FLAGS := -DCMAKE_INSTALL_PREFIX=/opt/ros/indigo** (ROS is installed at /opt).
