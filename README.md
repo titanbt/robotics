@@ -9,8 +9,8 @@ $ cd %TOP_DIR_YOUR_CATKIN_WS%/src
 $ catkin_create_pkg robot_setup_tf roscpp tf geometry_msgs
 ```
 In which:
-  - robot_setup_tf: the name of project.
-  - roscpp tf geometry_msgs: the name of library included into the project.
+  - **robot_setup_tf:** the name of project.
+  - **roscpp tf geometry_msgs:** the name of library included into the project.
 
 ##### 2. Setup ROS for Arduino
 
@@ -53,4 +53,5 @@ $ rosrun robot_setup_tf tf_listener
 ###### Note:
   1. Should Git Clone **Serial** folder into **catkin_ws/src** folder.
   2. Change directory in **Makefile** following ROS directory: 
+  
   **CMAKE_FLAGS := -DCMAKE_INSTALL_PREFIX=/opt/ros/indigo** (Here ROS is installed in **opt** folder).
